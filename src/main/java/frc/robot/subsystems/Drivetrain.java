@@ -4,34 +4,28 @@
 
 package frc.robot.subsystems;
 
-// import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-
-// import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
-// import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotMap;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 public class Drivetrain extends SubsystemBase { 
-    // private Encoder encoder_l= new Encoder(0, 1);
-    // private Encoder encoder_r = new Encoder(2, 3);
+
     // Left side motors
     private final MotorControllerGroup m_leftMotors =
     new MotorControllerGroup(new WPI_VictorSPX(RobotMap.CAN.DRIVETRAIN_LEFT_VICTORSPX_5),
     new WPI_VictorSPX(RobotMap.CAN.DRIVETRAIN_LEFT_VICTORSPX_6));
-       
 
     // Right side motors
     private final MotorControllerGroup m_rightMotors =     
     new MotorControllerGroup(new WPI_VictorSPX(RobotMap.CAN.DRIVETRAIN_RIGHT_VICTORSPX_3),
     new WPI_VictorSPX(RobotMap.CAN.DRIVETRAIN_RIGHT_VICTORSPX_4));
-           
-
-
+        
     public void setMotors(double right, double left) {
-        // SmartDashboard.putNumber("encoder getRate", encoder_l.getRate());
-        // SmartDashboard.putNumber("encoder getRate", encoder_r.getRate());
+        SmartDashboard.putNumber("encoder getRate", RobotMap.encoder_l.getRate());
+        SmartDashboard.putNumber("encoder getRate", RobotMap.encoder_r.getRate());
         m_leftMotors.set(left);
         m_rightMotors.set(right);
         m_leftMotors.setInverted(true);
