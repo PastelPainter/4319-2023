@@ -24,6 +24,11 @@ public class Auto extends CommandBase {
   @Override
   public void initialize() {
     // ahrs.calibrate();
+
+
+
+
+    
     // SmartDashboard.putNumber("pitch", ahrs.getPitch());
   }
 
